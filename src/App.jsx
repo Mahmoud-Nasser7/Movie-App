@@ -20,23 +20,22 @@ const App = () => {
       console.error('Error:', error);
     }
   }
-
   const fetchConfig = async () => {
     try {
       const response = await axios.get('/configuration');
-      dispatch(setImageUrl(response.data.images.secure_base_url + "original"))
+      dispatch(setImageUrl(response.data.images.secure_base_url + "w500")); // Use "w500" instead of "original"
     } catch (error) {
       console.error('Error:', error);
     }
-  }
-
+  };
+ 
   useEffect(() => {
     fetchTrednings();
     fetchConfig();
 
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 15000);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);

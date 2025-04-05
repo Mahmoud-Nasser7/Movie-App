@@ -33,6 +33,7 @@ useEffect(()=>{
                   src={imageUrl + item.backdrop_path}
                   alt={item.title}
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
               {/* button to next image */}
